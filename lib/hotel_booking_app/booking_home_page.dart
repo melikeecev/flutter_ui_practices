@@ -13,6 +13,7 @@ class _BookingHomePageState extends State<BookingHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Stack(
           children: [
@@ -30,61 +31,151 @@ class _BookingHomePageState extends State<BookingHomePage> {
                       color: Colors.grey,
                     ),
                   ),
-                  SizedBox(height: 16,),
+                  const SizedBox(
+                    height: 8,
+                  ),
                   const Text(
                     'Let\'s find the best\nhotel for you',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ), //switch to using rich text
 
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 16),
-                    child: SizedBox(
-                      height: 280,
-                      child: Card(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
                         child: Column(
                           children: [
                             Container(
-                              child: TextField(
-
+                              decoration: BoxDecoration(
+                                color: Colors.grey[100],
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 2),
+                              child: const TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  icon: Icon(
+                                    Ionicons.search_outline,
+                                  ),
+                                  hintText: 'Enter your destination',
+                                ),
                               ),
                             ),
-                            SizedBox(height: 16,),
+                            const SizedBox(
+                              height: 12,
+                            ),
                             Row(
                               children: [
                                 Expanded(
                                   child: Container(
-                                    child: TextField(),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[100],
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16, vertical: 2),
+                                    child: const TextField(
+                                      decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        icon: Icon(
+                                          Ionicons.calendar_outline,
+                                        ),
+                                        hintText: 'Dates',
+                                      ),
+                                    ),
                                   ),
                                 ),
-                                SizedBox(width: 16,),
+                                const SizedBox(
+                                  width: 16,
+                                ),
                                 Expanded(
                                   child: Container(
-                                    child: TextField(),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[100],
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16, vertical: 2),
+                                    child: const TextField(
+                                      decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        icon: Icon(
+                                          Ionicons.apps_outline,
+                                        ),
+                                        hintText: 'Rooms',
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
-                            SizedBox(height: 16,),
+                            const SizedBox(
+                              height: 12,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.grey[100],
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 2),
+                              child: const TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  icon: Icon(
+                                    Ionicons.people_outline,
+                                  ),
+                                  hintText: 'Guest',
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 12,
+                            ),
+                            Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.symmetric(vertical: 20),
+                              decoration: BoxDecoration(
+                                color: Colors.indigoAccent[100],
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Search hotel'.toUpperCase(),
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
                   Row(
-                    children: [
-                      Text('Top Searches Hotel'),
+                    children: const [
+                      Text(
+                        'Top Searches Hotel',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       Spacer(),
                       Text('See All'),
                       Icon(Icons.keyboard_arrow_right),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
-                  Expanded(child: Placeholder()),
+                  const Expanded(
+                    child: Placeholder(),
+                  ),
                 ],
               ),
             ),
@@ -99,7 +190,87 @@ class _BookingHomePageState extends State<BookingHomePage> {
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(24),
                     topRight: Radius.circular(24),
-                  )
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Ionicons.home_outline),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Text(
+                          'Home',
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Ionicons.heart_outline),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Text(
+                          'Favorites',
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Ionicons.notifications_outline),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Text(
+                          'Notifications',
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Ionicons.bookmark_outline),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Text(
+                          'Booking',
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Ionicons.person_outline),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Text(
+                          'Profile',
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -109,12 +280,12 @@ class _BookingHomePageState extends State<BookingHomePage> {
               child: Row(
                 children: [
                   Badge(
-                    child: Icon(Ionicons.notifications_outline),
+                    child: const Icon(Ionicons.notifications_outline),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 16,
                   ),
-                  CircleAvatar(),
+                  const CircleAvatar(),
                 ],
               ),
             ),
