@@ -20,7 +20,7 @@ class _BookingHomePageState extends State<BookingHomePage> {
             Positioned(
               left: 16,
               right: 0,
-              bottom: 48,
+              bottom: 64,
               top: 24,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,8 +173,98 @@ class _BookingHomePageState extends State<BookingHomePage> {
                   const SizedBox(
                     height: 16,
                   ),
-                  const Expanded(
-                    child: Placeholder(),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: 16,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: Container(
+                            width: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.blueGrey[200],
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          "https://cdn.pixabay.com/photo/2018/06/14/21/15/bedroom-3475656_960_720.jpg"
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    padding: EdgeInsets.all(8),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                                              decoration: BoxDecoration(
+                                                color: Colors.indigoAccent[100],
+                                                borderRadius: BorderRadius.circular(4),
+                                              ),
+                                              child: Center(
+                                                child: Text(
+                                                  '10%',
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(16.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Carden Inn Times Square'),
+                                      SizedBox(
+                                        height: 8,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            Icons.location_on_outlined,
+                                            color: Colors.blueGrey,
+                                            size: 16,
+                                          ),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                            'New York, NY(LAG)',
+                                            style: TextStyle(
+                                              color: Colors.blueGrey,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -295,3 +385,5 @@ class _BookingHomePageState extends State<BookingHomePage> {
     );
   }
 }
+
+//10:58 - 3
