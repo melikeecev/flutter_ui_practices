@@ -12,8 +12,38 @@ class _HousingHomePageState extends State<HousingHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                CircleAvatar(),
+                Expanded(child: Column(
+                  children: [
+                    Text('Location'),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: Colors.indigo,
+                        ),
+                        Text('Semerang City'),
+                      ],
+                    ),
+                  ],
+                ),),
+              ],
+            ),
+            Expanded(child: Placeholder(),),
+            Container(
+              height: 72,
+              decoration: BoxDecoration(
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+//6.39
