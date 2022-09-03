@@ -2,6 +2,9 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
+import 'custom_bottom_nav.dart';
+import 'search_card.dart';
+
 class BookingHomePage extends StatefulWidget {
   const BookingHomePage({Key? key}) : super(key: key);
 
@@ -37,124 +40,10 @@ class _BookingHomePageState extends State<BookingHomePage> {
                   const Text(
                     'Let\'s find the best\nhotel for you',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  ), //switch to using rich text
-
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: Card(
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.grey[100],
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 16, vertical: 2),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  icon: Icon(
-                                    Ionicons.search_outline,
-                                  ),
-                                  hintText: 'Enter your destination',
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 12,
-                            ),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey[100],
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 16, vertical: 2),
-                                    child: const TextField(
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        icon: Icon(
-                                          Ionicons.calendar_outline,
-                                        ),
-                                        hintText: 'Dates',
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 16,
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey[100],
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 16, vertical: 2),
-                                    child: const TextField(
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        icon: Icon(
-                                          Ionicons.apps_outline,
-                                        ),
-                                        hintText: 'Rooms',
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 12,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.grey[100],
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 16, vertical: 2),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  icon: Icon(
-                                    Ionicons.people_outline,
-                                  ),
-                                  hintText: 'Guest',
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 12,
-                            ),
-                            Container(
-                              width: double.infinity,
-                              padding: const EdgeInsets.symmetric(vertical: 20),
-                              decoration: BoxDecoration(
-                                color: Colors.indigoAccent[100],
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Search hotel'.toUpperCase(),
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12),
+                    child: SearchCard(),
                   ),
                   Row(
                     children: const [
@@ -193,27 +82,30 @@ class _BookingHomePageState extends State<BookingHomePage> {
                                     decoration: BoxDecoration(
                                       color: Colors.blueGrey[200],
                                       borderRadius: BorderRadius.circular(8),
-                                      image: DecorationImage(
+                                      image: const DecorationImage(
                                         image: NetworkImage(
-                                          "https://cdn.pixabay.com/photo/2018/06/14/21/15/bedroom-3475656_960_720.jpg"
-                                        ),
+                                            "https://cdn.pixabay.com/photo/2018/06/14/21/15/bedroom-3475656_960_720.jpg"),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
-                                    padding: EdgeInsets.all(8),
+                                    padding: const EdgeInsets.all(8),
                                     child: Column(
                                       children: [
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Container(
-                                              padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                                              padding: const EdgeInsets.symmetric(
+                                                  horizontal: 6, vertical: 4),
                                               decoration: BoxDecoration(
                                                 color: Colors.indigoAccent[100],
-                                                borderRadius: BorderRadius.circular(4),
+                                                borderRadius:
+                                                    BorderRadius.circular(4),
                                               ),
-                                              child: Center(
+                                              child: const Center(
                                                 child: Text(
                                                   '10%',
                                                   style: TextStyle(
@@ -230,16 +122,17 @@ class _BookingHomePageState extends State<BookingHomePage> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(16.0),
+                                  padding: const EdgeInsets.all(16.0),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Text('Carden Inn Times Square'),
-                                      SizedBox(
+                                      const Text('Carden Inn Times Square'),
+                                      const SizedBox(
                                         height: 8,
                                       ),
                                       Row(
-                                        children: [
+                                        children: const [
                                           Icon(
                                             Icons.location_on_outlined,
                                             color: Colors.blueGrey,
@@ -269,100 +162,11 @@ class _BookingHomePageState extends State<BookingHomePage> {
                 ],
               ),
             ),
-            Positioned(
+            const Positioned(
               bottom: 0,
               left: 0,
               right: 0,
-              child: Container(
-                height: 72,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(24),
-                    topRight: Radius.circular(24),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Ionicons.home_outline),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          'Home',
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Ionicons.heart_outline),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          'Favorites',
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Ionicons.notifications_outline),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          'Notifications',
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Ionicons.bookmark_outline),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          'Booking',
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Ionicons.person_outline),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          'Profile',
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              child: CustomBottomNav(),
             ),
             Positioned(
               right: 16,
@@ -386,4 +190,6 @@ class _BookingHomePageState extends State<BookingHomePage> {
   }
 }
 
-//10:58 - 3
+
+
+
