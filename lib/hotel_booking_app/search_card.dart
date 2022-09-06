@@ -13,15 +13,8 @@ class SearchCard extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.grey[100],
-                borderRadius: BorderRadius.circular(8),
-              ),
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 16, vertical: 2),
-              child: const TextFieldWidget(
-                inputBorder: InputBorder.none,
+            const InputContainer(
+              textFieldWidget: TextFieldWidget(
                 myIcon: Icon(Ionicons.search_outline),
                 hintText: 'Enter your destination',
               ),
@@ -30,45 +23,23 @@ class SearchCard extends StatelessWidget {
               height: 12,
             ),
             Row(
-              children: [
+              children: const [
                 Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 2),
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        icon: Icon(
-                          Ionicons.calendar_outline,
-                        ),
-                        hintText: 'Dates',
-                      ),
+                  child: InputContainer(
+                    textFieldWidget: TextFieldWidget(
+                      myIcon: Icon(Ionicons.calendar_outline),
+                      hintText: 'Dates',
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 16,
                 ),
                 Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 2),
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        icon: Icon(
-                          Ionicons.apps_outline,
-                        ),
-                        hintText: 'Rooms',
-                      ),
+                  child: InputContainer(
+                    textFieldWidget: TextFieldWidget(
+                      myIcon: Icon(Ionicons.apps_outline),
+                      hintText: 'Rooms',
                     ),
                   ),
                 ),
@@ -77,21 +48,10 @@ class SearchCard extends StatelessWidget {
             const SizedBox(
               height: 12,
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.grey[100],
-                borderRadius: BorderRadius.circular(8),
-              ),
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 16, vertical: 2),
-              child: const TextField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  icon: Icon(
-                    Ionicons.people_outline,
-                  ),
-                  hintText: 'Guest',
-                ),
+            const InputContainer(
+              textFieldWidget: TextFieldWidget(
+                myIcon: Icon(Ionicons.people_outline),
+                hintText: 'Guest',
               ),
             ),
             const SizedBox(
@@ -121,23 +81,42 @@ class SearchCard extends StatelessWidget {
   }
 }
 
+class InputContainer extends StatelessWidget {
+  const InputContainer({
+    Key? key,
+    required this.textFieldWidget,
+  }) : super(key: key);
+
+  final TextFieldWidget textFieldWidget;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey[100],
+        borderRadius: BorderRadius.circular(8),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+      child: textFieldWidget,
+    );
+  }
+}
+
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({
     Key? key,
     required this.myIcon,
     required this.hintText,
-    required this.inputBorder,
   }) : super(key: key);
 
   final Icon myIcon;
   final String hintText;
-  final InputBorder inputBorder;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        border: inputBorder,
+        border: InputBorder.none,
         icon: myIcon,
         hintText: hintText,
       ),

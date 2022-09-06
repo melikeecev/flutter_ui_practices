@@ -22,7 +22,7 @@ class CustomBottomNav extends StatelessWidget {
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Icon(Ionicons.home_outline),
               SizedBox(
                 height: 4,
@@ -37,7 +37,7 @@ class CustomBottomNav extends StatelessWidget {
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Icon(Ionicons.heart_outline),
               SizedBox(
                 height: 4,
@@ -52,7 +52,7 @@ class CustomBottomNav extends StatelessWidget {
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Icon(Ionicons.notifications_outline),
               SizedBox(
                 height: 4,
@@ -67,7 +67,7 @@ class CustomBottomNav extends StatelessWidget {
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Icon(Ionicons.bookmark_outline),
               SizedBox(
                 height: 4,
@@ -82,7 +82,7 @@ class CustomBottomNav extends StatelessWidget {
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Icon(Ionicons.person_outline),
               SizedBox(
                 height: 4,
